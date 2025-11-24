@@ -43,7 +43,7 @@ export function BlogGrid({ posts }: BlogGridProps) {
           >
             {post.data.coverImage && (
               <img
-                src={post.data.coverImage.src}
+                src={`/blog/${post.data.coverImage.startsWith("./") ? post.data.coverImage.slice(2) : post.data.coverImage}`}
                 alt={post.data.title}
                 className="aspect-video w-full object-cover transition-transform group-hover:scale-105"
               />
@@ -79,7 +79,7 @@ export function BlogGrid({ posts }: BlogGridProps) {
               className="flex-shrink-0 overflow-hidden rounded-3xl shadow-xl transition-all group-hover:shadow-2xl lg:w-[43rem]"
             >
               <img
-                src={heroPost.data.coverImage.src}
+                src={`/blog/${heroPost.data.coverImage.startsWith("./") ? heroPost.data.coverImage.slice(2) : heroPost.data.coverImage}`}
                 alt={heroPost.data.title}
                 className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style={{ aspectRatio: "5 / 4" }}

@@ -169,7 +169,6 @@ Used in:
 
 - Featured hero post on blog index page (`blog/index.astro`)
 
-
 ### Image Optimization Tips
 
 1. **Before adding images**:

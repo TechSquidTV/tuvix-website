@@ -63,7 +63,7 @@ const latestPosts = allPosts
                   >
                     {post.data.coverImage && (
                       <img
-                        src={post.data.coverImage.src}
+                        src={`/blog/${post.data.coverImage.startsWith("./") ? post.data.coverImage.slice(2) : post.data.coverImage}`}
                         alt={post.data.title}
                         class="aspect-video w-full object-cover transition-transform group-hover:scale-105"
                       />

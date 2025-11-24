@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -19,16 +18,18 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
 }).format(publishedDate);
 
 // Get image URL for OG meta tags
-// With passthroughImageService, we can use the ImageMetadata directly
-// The src property contains the path Astro uses to serve the image
+// coverImage is now a string path (relative to content directory)
 let ogImageUrl: string;
 if (coverImage) {
-  // coverImage is an ImageMetadata object with a src property
-  const imageSrc = typeof coverImage === "object" && "src" in coverImage 
-    ? coverImage.src 
-    : coverImage;
+  // coverImage is a relative path like "./getting-started-with-rss-cover.webp"
+  // Images in content/blog/ are served from /blog/ path
   // Construct absolute URL for OG tags
-  ogImageUrl = new URL(imageSrc, Astro.site).href;
+  const imagePath = coverImage.startsWith("./") 
+    ? `/blog/${coverImage.slice(2)}` 
+    : coverImage.startsWith("/") 
+    ? coverImage 
+    : `/blog/${coverImage}`;
+  ogImageUrl = new URL(imagePath, Astro.site).href;
 } else {
   // Use default OG image if no cover image
   ogImageUrl = new URL("/tuvix-og.webp", Astro.site).href;
@@ -98,11 +99,10 @@ if (coverImage) {
     {
       coverImage && (
         <div class="mb-12">
-          <Image
-            src={coverImage}
+          <img
+            src={`/blog/${coverImage.startsWith("./") ? coverImage.slice(2) : coverImage}`}
             alt={coverAlt || title}
             class="aspect-video w-full rounded-xl object-cover"
-            transition:name={`blog-image-${slug}`}
           />
         </div>
       )

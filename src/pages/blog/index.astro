@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
 import { BlogTabs } from "@/components/BlogTabs";
 import { getCollection } from "astro:content";
 
@@ -46,8 +45,8 @@ const formatDate = (date: Date) => {
               href={`/blog/${heroPost.slug}`}
               class="flex-shrink-0 overflow-hidden rounded-3xl shadow-xl transition-all group-hover:shadow-2xl lg:w-[43rem]"
             >
-              <Image
-                src={heroPost.data.coverImage}
+              <img
+                src={`/blog/${heroPost.data.coverImage.startsWith("./") ? heroPost.data.coverImage.slice(2) : heroPost.data.coverImage}`}
                 alt={heroPost.data.coverAlt || heroPost.data.title}
                 class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style="aspect-ratio: 5 / 4;"
@@ -127,11 +126,10 @@ const formatDate = (date: Date) => {
             class="blog-post group flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-xl"
           >
             {post.data.coverImage && (
-              <Image
-                src={post.data.coverImage}
+              <img
+                src={`/blog/${post.data.coverImage.startsWith("./") ? post.data.coverImage.slice(2) : post.data.coverImage}`}
                 alt={post.data.coverAlt || post.data.title}
                 class="aspect-video w-full object-cover transition-transform group-hover:scale-105"
-                transition:name={`blog-image-${post.slug}`}
               />
             )}
             <div class="flex flex-1 flex-col p-6">

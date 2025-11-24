@@ -1,6 +1,5 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import { getImage } from "astro:assets";
 
 export async function GET(context) {
   const blog = await getCollection("blog");
@@ -26,8 +25,12 @@ export async function GET(context) {
 
         // Include cover image if available
         if (post.data.coverImage) {
-          const image = await getImage({ src: post.data.coverImage });
-          const imageUrl = new URL(image.src, context.site).href;
+          const imagePath = post.data.coverImage.startsWith("./")
+            ? `/blog/${post.data.coverImage.slice(2)}`
+            : post.data.coverImage.startsWith("/")
+              ? post.data.coverImage
+              : `/blog/${post.data.coverImage}`;
+          const imageUrl = new URL(imagePath, context.site).href;
           const imageAlt = post.data.coverAlt || post.data.title;
 
           // Include image HTML in description (most RSS readers support HTML in description)
