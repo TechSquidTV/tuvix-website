@@ -52,6 +52,8 @@ New episodes show up in your feed automatically. Catch new episodes in your main
 
 Audio-enabled posts, like podcasts, will have a built-in audio player. Just click play to listen to the episode.
 
+![Listening to an episode in Tuvix](../img/tuvix-audio-player.webp)
+
 ## Pro Tips
 
 > **Tip**: Want to see show notes or transcripts? Just click through to the original episode page.
