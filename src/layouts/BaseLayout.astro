@@ -36,11 +36,13 @@ const defaultDescription = "Take back control of your internet with Tuvix, the o
     <meta property="og:description" content={description || defaultDescription} />
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
     <meta property="og:site_name" content="Tuvix" />
+    <meta property="og:image" content={new URL("/tuvix-og.webp", Astro.site).href} />
     
     {/* Twitter */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description || defaultDescription} />
+    <meta name="twitter:image" content={new URL("/tuvix-og.webp", Astro.site).href} />
     
     <slot name="head" />
     <ClientRouter />

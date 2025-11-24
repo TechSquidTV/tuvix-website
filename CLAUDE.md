@@ -169,12 +169,6 @@ Used in:
 
 - Featured hero post on blog index page (`blog/index.astro`)
 
-#### Open Graph Images
-
-- **Size**: **1200×630px** (standard OG image size)
-- **Aspect Ratio**: ~1.91:1
-- **File Format**: PNG or JPG
-- **Note**: These are auto-generated at `/blog/og-image/[slug].png.ts`
 
 ### Image Optimization Tips
 

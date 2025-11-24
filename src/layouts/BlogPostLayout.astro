@@ -17,6 +17,22 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   month: "long",
   day: "numeric",
 }).format(publishedDate);
+
+// Get image URL for OG meta tags
+// With passthroughImageService, we can use the ImageMetadata directly
+// The src property contains the path Astro uses to serve the image
+let ogImageUrl: string;
+if (coverImage) {
+  // coverImage is an ImageMetadata object with a src property
+  const imageSrc = typeof coverImage === "object" && "src" in coverImage 
+    ? coverImage.src 
+    : coverImage;
+  // Construct absolute URL for OG tags
+  ogImageUrl = new URL(imageSrc, Astro.site).href;
+} else {
+  // Use default OG image if no cover image
+  ogImageUrl = new URL("/tuvix-og.webp", Astro.site).href;
+}
 ---
 
 <BaseLayout title={`${title} - Tuvix Blog`} description={description}>
@@ -26,10 +42,8 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   <meta slot="head" property="og:description" content={description} />
   <meta slot="head" property="og:url" content={new URL(`/blog/${slug}`, Astro.site).href} />
   <meta slot="head" property="og:site_name" content="Tuvix" />
-  <meta slot="head" property="og:image" content={new URL(`/blog/og-image/${slug}.png`, Astro.site).href} />
-  <meta slot="head" property="og:image:width" content="1200" />
-  <meta slot="head" property="og:image:height" content="630" />
-  <meta slot="head" property="og:image:alt" content={title} />
+  <meta slot="head" property="og:image" content={ogImageUrl} />
+  <meta slot="head" property="og:image:alt" content={coverAlt || title} />
   
   {/* Article specific */}
   <meta slot="head" property="article:published_time" content={publishedDate.toISOString()} />
@@ -40,7 +54,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   <meta slot="head" name="twitter:card" content="summary_large_image" />
   <meta slot="head" name="twitter:title" content={title} />
   <meta slot="head" name="twitter:description" content={description} />
-  <meta slot="head" name="twitter:image" content={new URL(`/blog/og-image/${slug}.png`, Astro.site).href} />
+  <meta slot="head" name="twitter:image" content={ogImageUrl} />
   <article class="mx-auto max-w-4xl px-6 py-16">
     {/* Header */}
     <header class="mb-12">
