@@ -82,9 +82,22 @@ interface TabsContentProps extends React.ComponentPropsWithoutRef<typeof TabsPri
 const TabsContent = React.forwardRef<
   React.ComponentRef<typeof TabsPrimitive.Content>,
   TabsContentProps
->(({ className, transition = { duration: 0.3, ease: "easeInOut" }, children, value, ...props }) => {
+>(({ className, transition = { duration: 0.3, ease: "easeInOut" }, children, value, ...props }, ref) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = React.useState(false);
+
+  // Callback ref to merge forwarded ref with internal ref
+  const setRefs = React.useCallback(
+    (node: HTMLDivElement | null) => {
+      contentRef.current = node;
+      if (typeof ref === "function") {
+        ref(node);
+      } else if (ref) {
+        ref.current = node;
+      }
+    },
+    [ref]
+  );
 
   React.useEffect(() => {
     if (!contentRef.current) return;
@@ -110,7 +123,7 @@ const TabsContent = React.forwardRef<
 
   return (
     <TabsPrimitive.Content
-      ref={contentRef}
+      ref={setRefs}
       value={value}
       className={cn(
         "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
