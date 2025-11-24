@@ -16,6 +16,16 @@ const blogCollection = defineCollection({
   }),
 });
 
+// Define img collection to suppress auto-generation warning
+// This folder contains image assets (not markdown), so no files will be processed
+const imgCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    // Empty schema since this folder only contains image assets, not markdown files
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
+  img: imgCollection,
 };

@@ -1,9 +1,45 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GITHUB_URL, FEED_URL } from "@/lib/constants";
 
 export const Hero = () => {
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    // Load Vimeo player script
+    // Use Intersection Observer to load video only when it's about to enter viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoadVideo(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        // Start loading when video is 200px away from viewport
+        rootMargin: "200px",
+      }
+    );
+
+    if (videoContainerRef.current) {
+      observer.observe(videoContainerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    // Only load Vimeo player script when video is about to be loaded
+    if (!shouldLoadVideo) return;
+
+    // Check if script is already loaded
+    if (document.querySelector('script[src="https://player.vimeo.com/api/player.js"]')) {
+      return;
+    }
+
     const script = document.createElement("script");
     script.src = "https://player.vimeo.com/api/player.js";
     script.async = true;
@@ -15,7 +51,8 @@ export const Hero = () => {
         document.body.removeChild(script);
       }
     };
-  }, []);
+  }, [shouldLoadVideo]);
+
   return (
     <div className="relative overflow-hidden bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -49,24 +86,56 @@ export const Hero = () => {
         </div>
 
         {/* Hero Video/Visual */}
-        <div className="mt-16 flow-root sm:mt-24">
+        <div ref={videoContainerRef} className="mt-16 flow-root sm:mt-24">
           <div className="relative rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
             <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-              <iframe
-                src="https://player.vimeo.com/video/1139891283?badge=0&autopause=0&player_id=0&app_id=58479"
-                style={{ border: 0 }}
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-                title="Tuvix Launch Video"
-                className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
-              />
+              {shouldLoadVideo ? (
+                <iframe
+                  src="https://player.vimeo.com/video/1139891283?badge=0&autopause=0&player_id=0&app_id=58479"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  loading="lazy"
+                  style={{
+                    border: 0,
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  title="Tuvix Launch Video"
+                  className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                />
+              ) : (
+                <div
+                  className="absolute inset-0 rounded-md shadow-2xl ring-1 ring-gray-900/10 overflow-hidden"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                >
+                  <img
+                    src="/blog/tuvix-beta-launch-cover.webp"
+                    alt="Tuvix Launch Video"
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                    <div className="rounded-full bg-white/90 p-4 shadow-lg">
+                      <svg
+                        className="h-12 w-12 text-gray-900"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
