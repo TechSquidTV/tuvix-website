@@ -1,0 +1,134 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { FAQ } from "@/components/FAQ";
+import { GITHUB_URL, FEED_URL } from "@/lib/constants";
+---
+
+<BaseLayout
+  title="About Tuvix - Open Source RSS Aggregator"
+  description="Learn about Tuvix, the open-source RSS aggregator that puts you back in control of your internet experience. No algorithms, no tracking, just your content."
+>
+  {/* Mission Section */}
+  <section class="bg-gray-50 py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Our Mission
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          The internet used to be a collection of individuals; personal blogs, niche communities, and independent publishers. Now it's a giant algorithm-driven feed designed to keep you scrolling. We're building Tuvix to give you
+          back control of your online experience. This isn't a social network, or a network of any kind. It's a simple, private feed reader.
+        </p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          With Tuvix, you add your favorite blogs and websites, and then receive content in chronological order. No recommendations, no "For You" pages, no mystery algorithms deciding what
+          you should see next.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 lg:grid-cols-3">
+        <div class="flex flex-col text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-black">
+            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900">Simple</h3>
+          <p class="mt-2 text-base text-gray-600">
+            Clean, intuitive interface that works beautifully on any device. No clutter, no distractions—just your content.
+          </p>
+        </div>
+
+        <div class="flex flex-col text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-black">
+            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900">Private</h3>
+          <p class="mt-2 text-base text-gray-600">
+            Your data stays yours. Use our hosted version with minimal error reporting, or self-host for complete privacy.
+          </p>
+        </div>
+
+        <div class="flex flex-col text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-black">
+            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900">Independent</h3>
+          <p class="mt-2 text-base text-gray-600">
+            Support the small web. Follow independent blogs, personal sites, and creators who aren't part of the algorithm-driven mainstream.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Story Section */}
+  <section class="bg-white py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Why "Tuvix"?
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Tuvix is named after a character from Star Trek: Voyager who was created by merging two
+          individuals into one. The name came to mind when thinking about one of Tuvix's core features:
+          merging multiple RSS sources into a new public feed. And who doesn't love a good Star Trek reference?
+        </p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          We believe the best reading experience doesn't require sophisticated algorithms or endless
+          personalization. It just requires giving you the tools to find and organize content you care about.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* FAQ Section */}
+  <section class="bg-gray-50 py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Got questions? We've got answers.
+        </p>
+      </div>
+      <div class="mx-auto mt-12 max-w-3xl">
+        <FAQ client:load />
+      </div>
+    </div>
+  </section>
+
+  {/* CTA Section */}
+  <section class="bg-black py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          Ready to get started?
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-gray-300">
+          Join the growing community of people who've taken back control of their feeds.
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a
+            href={FEED_URL}
+            class="rounded-md bg-white px-6 py-3 text-base font-semibold text-black shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            Get It Free
+          </a>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-base font-semibold leading-7 text-white hover:text-gray-300"
+          >
+            View on GitHub <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

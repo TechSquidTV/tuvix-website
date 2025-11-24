@@ -1,0 +1,110 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { API_URL, APP_ARTICLES_URL } from "@/lib/constants";
+import "@/styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const defaultDescription = "Take back control of your internet with Tuvix, the open-source RSS aggregator. No algorithms, no tracking—just your content, your way.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description || defaultDescription} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Tuvix Blog RSS Feed"
+      href={new URL("blog/rss.xml", Astro.site)}
+    />
+    <title>{title}</title>
+    
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description || defaultDescription} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
+    <meta property="og:site_name" content="Tuvix" />
+    
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description || defaultDescription} />
+    
+    <slot name="head" />
+    <ClientRouter />
+    <style is:global>
+      /* Simple crossfade - no movement at all */
+      ::view-transition-old(root) {
+        animation: 250ms ease-out both fade-out-only;
+      }
+
+      ::view-transition-new(root) {
+        animation: 400ms ease-out both fade-in-only;
+      }
+
+      @keyframes fade-out-only {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+
+      @keyframes fade-in-only {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load transition:persist />
+    <main>
+      <slot />
+    </main>
+    <Footer client:load transition:persist />
+    <script is:inline define:vars={{ apiUrl: API_URL, appArticlesUrl: APP_ARTICLES_URL }}>
+      (async function() {
+        // Only check on the main blog page (homepage)
+        if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+          return; // Don't redirect on blog post pages or other pages
+        }
+
+        try {
+          // Check for valid session by calling Better Auth session endpoint
+          const response = await fetch(`${apiUrl}/api/auth/session`, {
+            method: 'GET',
+            credentials: 'include', // Include cookies (important!)
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            
+            // Better Auth returns { data: { user, session }, error: null } on success
+            if (data?.data?.user) {
+              // User has a valid session, redirect to app
+              window.location.href = appArticlesUrl;
+              return;
+            }
+          }
+          
+          // No valid session, stay on blog
+        } catch (error) {
+          // Network error or API unavailable - stay on blog
+          console.debug('Session check failed (non-critical):', error);
+        }
+      })();
+    </script>
+  </body>
+</html>
