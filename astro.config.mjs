@@ -11,7 +11,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   // Update this with your actual domain
-  site: "https://tuvix.com",
+  site: "https://tuvix.app",
 
   vite: {
     plugins: [tailwindcss()],
