@@ -1,7 +1,7 @@
 ---
 title: "Tuvix Beta: Take Back Control of Your Feed"
 description: "We're excited to announce the beta release of Tuvix, the open-source RSS reader built for privacy and simplicity—for everyone."
-publishedDate: 2024-11-23
+publishedDate: 2025-11-23
 author: "Kyle (TechSquidTV)"
 category: "News"
 coverImage: "./tuvix-beta-launch-cover.webp"

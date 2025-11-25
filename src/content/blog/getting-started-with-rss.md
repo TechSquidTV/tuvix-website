@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with RSS and Tuvix"
 description: "A beginner's guide to RSS feeds and how to use Tuvix to take control of your content consumption."
-publishedDate: 2024-11-23
+publishedDate: 2025-11-23
 author: "Kyle (TechSquidTV)"
 category: "Tutorials"
 coverImage: "./getting-started-with-rss-cover.webp"

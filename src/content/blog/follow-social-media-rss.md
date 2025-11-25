@@ -1,7 +1,7 @@
 ---
 title: "How to Follow Anyone on Twitter, Mastodon, or Bluesky Using RSS"
 description: "Escape the algorithm and follow your favorite creators across social platforms using RSS feeds. No algorithms, no tracking—just their content in chronological order."
-publishedDate: 2024-11-23
+publishedDate: 2025-11-24
 author: "Kyle (TechSquidTV)"
 category: "Tutorials"
 coverImage: "./follow-social-media-rss-cover.webp"

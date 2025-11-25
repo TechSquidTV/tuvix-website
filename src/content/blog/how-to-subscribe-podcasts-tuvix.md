@@ -1,7 +1,7 @@
 ---
 title: "How to Subscribe and Listen to Podcasts on Tuvix"
 description: "Learn how to subscribe to podcasts using Apple Podcasts URLs and listen to episodes directly in Tuvix with built-in audio playback."
-publishedDate: 2024-11-23
+publishedDate: 2025-11-25
 author: "Kyle (TechSquidTV)"
 category: "Tutorials"
 featured: true
