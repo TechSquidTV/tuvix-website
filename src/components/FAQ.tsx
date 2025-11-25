@@ -18,7 +18,8 @@ const faqs = [
     question: "What's RSS and why should I care?",
     answer:
       'RSS (Really Simple Syndication) used to be the main way to "subscribe" to individual websites and blogs, before the internet became centralized into a few social media platforms. \
-      When a website publishes new content, like a blog post, a podcast, or a video, they will publish an RSS feed that Tuvix or other RSS readers can subscribe to. An RSS aggregator, like Tuvix, will then fetch the latest content from the RSS feeds and display it in a chronological order, like a personally curated newspaper.',
+      When a website publishes new content, like a blog post, a podcast, or a video, they will publish an RSS feed that Tuvix or other RSS readers can subscribe to. An RSS aggregator, like Tuvix, will then fetch the latest content from the RSS feeds and display it in a chronological order, like a personally curated newspaper. \
+      Think about bookmarks in your browser, do you really ever go back to them? Probably not. With RSS, you can subscribe to those websites and consume any new content in a single place.',
   },
   {
     question: "How is this different from Feedly or other RSS readers?",
@@ -93,6 +94,12 @@ const faqs = [
         relies on.
       </>
     ),
+  },
+  {
+    question: 'Will there NEVER be an "Algorithm" in Tuvix?',
+    answer:
+      'No. We don\'t belive algorithms are inherently bad, dark patterns are. One of the main complains with RSS, is the lack of ability to rank priority of content. If you subscribe to one blog that publishes twice a year and another blog that publishes 10 times a day, it makes it easy to miss the more rare content, if you are reading chronologically. \
+      However, even with completely open and transparent algorithms, it would always inherently introduce some sort of bias. So, even if an "algorithm" was added to Tuvix, it would of course remain part of the open source project, and never replace the chronological feed.',
   },
 ];
 
