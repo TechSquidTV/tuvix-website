@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Finance &amp; Business Feeds</title>
+    <dateCreated>Wed, 03 Dec 2025 12:00:00 GMT</dateCreated>
+    <ownerName>TuvixRSS User</ownerName>
+  </head>
+  <body>
+    <outline
+      type="rss"
+      text="Bloomberg"
+      title="Bloomberg"
+      xmlUrl="https://feeds.bloomberg.com/business/news.xml"
+      htmlUrl="https://www.bloomberg.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Business&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Wall Street Journal"
+      title="Wall Street Journal"
+      xmlUrl="https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml"
+      htmlUrl="https://www.wsj.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Business&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Financial Times"
+      title="Financial Times"
+      xmlUrl="https://www.ft.com/?format=rss"
+      htmlUrl="https://www.ft.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Business&quot;]"
+    />
+    <outline
+      type="rss"
+      text="CNBC"
+      title="CNBC"
+      xmlUrl="https://www.cnbc.com/id/100003114/device/rss/rss.html"
+      htmlUrl="https://www.cnbc.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Business&quot;]"
+    />
+    <outline
+      type="rss"
+      text="MarketWatch"
+      title="MarketWatch"
+      xmlUrl="https://feeds.marketwatch.com/marketwatch/topstories/"
+      htmlUrl="https://www.marketwatch.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Markets&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Reuters Business"
+      title="Reuters Business"
+      xmlUrl="https://www.reuters.com/rssFeed/businessNews"
+      htmlUrl="https://www.reuters.com/business"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Business&quot;]"
+    />
+    <outline
+      type="rss"
+      text="The Economist"
+      title="The Economist"
+      xmlUrl="https://www.economist.com/finance-and-economics/rss.xml"
+      htmlUrl="https://www.economist.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Economics&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Forbes"
+      title="Forbes"
+      xmlUrl="https://www.forbes.com/business/feed/"
+      htmlUrl="https://www.forbes.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Business&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Fortune"
+      title="Fortune"
+      xmlUrl="https://fortune.com/feed/"
+      htmlUrl="https://fortune.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Business&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Barron's"
+      title="Barron's"
+      xmlUrl="https://www.barrons.com/feeds/all"
+      htmlUrl="https://www.barrons.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Finance&quot;,&quot;Markets&quot;]"
+    />
+  </body>
+</opml>

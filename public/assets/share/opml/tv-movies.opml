@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>TV &amp; Movies Feeds</title>
+    <dateCreated>Wed, 03 Dec 2025 12:00:00 GMT</dateCreated>
+    <ownerName>TuvixRSS User</ownerName>
+  </head>
+  <body>
+    <outline
+      type="rss"
+      text="Entertainment Weekly"
+      title="Entertainment Weekly"
+      xmlUrl="https://ew.com/feed/"
+      htmlUrl="https://ew.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Entertainment&quot;,&quot;TV&quot;,&quot;Movies&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Variety"
+      title="Variety"
+      xmlUrl="https://variety.com/feed/"
+      htmlUrl="https://variety.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Entertainment&quot;,&quot;TV&quot;,&quot;Movies&quot;]"
+    />
+    <outline
+      type="rss"
+      text="The Hollywood Reporter"
+      title="The Hollywood Reporter"
+      xmlUrl="https://www.hollywoodreporter.com/feed/"
+      htmlUrl="https://www.hollywoodreporter.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Entertainment&quot;,&quot;TV&quot;,&quot;Movies&quot;]"
+    />
+    <outline
+      type="rss"
+      text="IndieWire"
+      title="IndieWire"
+      xmlUrl="https://www.indiewire.com/feed/"
+      htmlUrl="https://www.indiewire.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Entertainment&quot;,&quot;Movies&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Rotten Tomatoes"
+      title="Rotten Tomatoes"
+      xmlUrl="https://editorial.rottentomatoes.com/feed/"
+      htmlUrl="https://www.rottentomatoes.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Reviews&quot;,&quot;Movies&quot;,&quot;TV&quot;]"
+    />
+    <outline
+      type="rss"
+      text="IGN Movies"
+      title="IGN Movies"
+      xmlUrl="https://feeds.ign.com/ign/movies/all"
+      htmlUrl="https://www.ign.com/movies"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Reviews&quot;,&quot;Movies&quot;]"
+    />
+    <outline
+      type="rss"
+      text="IGN TV"
+      title="IGN TV"
+      xmlUrl="https://feeds.ign.com/ign/tv/all"
+      htmlUrl="https://www.ign.com/tv"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Reviews&quot;,&quot;TV&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Collider"
+      title="Collider"
+      xmlUrl="https://collider.com/feed/"
+      htmlUrl="https://collider.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Entertainment&quot;,&quot;TV&quot;,&quot;Movies&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Vulture"
+      title="Vulture"
+      xmlUrl="https://www.vulture.com/feeds/all.rss"
+      htmlUrl="https://www.vulture.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Entertainment&quot;,&quot;TV&quot;,&quot;Movies&quot;]"
+    />
+    <outline
+      type="rss"
+      text="Den of Geek"
+      title="Den of Geek"
+      xmlUrl="https://www.denofgeek.com/feed/"
+      htmlUrl="https://www.denofgeek.com"
+      tuvixFilterEnabled="false"
+      tuvixFilterMode="include"
+      tuvixCategories="[&quot;Entertainment&quot;,&quot;TV&quot;,&quot;Movies&quot;]"
+    />
+  </body>
+</opml>
