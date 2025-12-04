@@ -30,6 +30,13 @@ export const Footer = () => {
           >
             GitHub
           </a>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/techsquidtv/tuvix-rss" />
+          </a>
         </div>
 
         <div className="mt-12 border-t pt-8">
