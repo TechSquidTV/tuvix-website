@@ -12,7 +12,7 @@ coverImage: "./how-to-subscribe-podcasts-tuvix-cover.webp"
 
 When podcasts were catching on in popularity in the early 2010s, one of the great things about them, was how easy and cheap they were to host yourself. Anyone who could setup a blog with an RSS feed, could also host a podcast; assuming they had a microphone. Podcast apps were just RSS readers with a built-in audio player.
 
-Today, pocasting has largely been centralized into a few major platforms, like Apple Podcasts, Spotify, and Google Music. Luckily, so far, Apple Podcasts still offers RSS feeds for most podcasts, so you can still subscribe to them using RSS feeds. Spotify and Google Music, on the other hand, lock their content behind invasive tracking and advertising.
+Today, podcasting has largely been centralized into a few major platforms, like Apple Podcasts, Spotify, and Google Music. Luckily, so far, Apple Podcasts still offers RSS feeds for most podcasts, so you can still subscribe to them using RSS feeds. Spotify and Google Music, on the other hand, lock their content behind invasive tracking and advertising.
 ## Getting Started with Podcasts
 
 If you've used the Apple Podcasts app before, you'll be right at home with Tuvix. Tuvix just supports subscribing to more than just podcasts. You'll be able to listen to blog posts as well if they publish audio.
@@ -33,7 +33,7 @@ That's it! Tuvix will grab everything it needs automatically—the episodes, art
 
 Go to [https://feed.tuvix.app/app/subscriptions](https://feed.tuvix.app/app/subscriptions) and hit "Add Subscription".
 
-Paste that Apple Podcasts URL you copied, and Tuvix will fetch podcast feed. 
+Paste that Apple Podcasts URL you copied, and Tuvix will fetch the podcast feed. 
 
 ![Adding a podcast subscription in Tuvix](../img/add-pluribus-subscription.webp)
 
@@ -48,7 +48,7 @@ Categories help you find stuff faster, and you can even turn them into a shareab
 
 ### 4. Listen to Episodes
 
-New episodes show up in your feed automatically. Catch new episodes in your main feed when they come out, yoou can also click into any specific subscription to see all of the episodes for that show.
+New episodes show up in your feed automatically. Catch new episodes in your main feed when they come out, you can also click into any specific subscription to see all of the episodes for that show.
 
 Audio-enabled posts, like podcasts, will have a built-in audio player. Just click play to listen to the episode.
 

@@ -10,7 +10,7 @@ featured: true
 
 # How to Follow Anyone on Twitter, Mastodon, or Bluesky Using RSS
 
-Ever seen an app that shows posts from everyone you follow from multiple platforms in one place? One of oldest standards on the web (RSS) has been making it possible for years, without any fancy apps.
+Ever seen an app that shows posts from everyone you follow from multiple platforms in one place? One of the oldest standards on the web (RSS) has been making it possible for years, without any fancy apps.
 
 ## Why Use RSS for Social Media?
 

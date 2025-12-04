@@ -98,7 +98,7 @@ const faqs = [
   {
     question: 'Will there NEVER be an "Algorithm" in Tuvix?',
     answer:
-      'No. We don\'t belive algorithms are inherently bad, dark patterns are. One of the main complaints with RSS, is the lack of ability to rank priority of content. If you subscribe to one blog that publishes twice a year and another blog that publishes 10 times a day, it makes it easy to miss the more rare content, if you are reading chronologically. \
+      'No. We don\'t believe algorithms are inherently bad, dark patterns are. One of the main complaints with RSS, is the lack of ability to rank priority of content. If you subscribe to one blog that publishes twice a year and another blog that publishes 10 times a day, it makes it easy to miss the more rare content, if you are reading chronologically. \
       However, even with completely open and transparent algorithms, it would always inherently introduce some sort of bias. So, even if an "algorithm" was added to Tuvix, it would of course remain part of the open source project, and never replace the chronological feed.',
   },
 ];

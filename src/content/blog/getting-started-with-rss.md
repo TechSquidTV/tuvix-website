@@ -43,7 +43,7 @@ Start subscribing to your favorite websites and blogs. Tuvix will try to automat
 
 ### 3. Organize with Categories
 
-Create categories to organize your feeds by topic. when adding a feed to Tuvix, you'll ahve the opporunity to add existing categories or create new ones.
+Create categories to organize your feeds by topic. when adding a feed to Tuvix, you'll have the opportunity to add existing categories or create new ones.
 
 Categories help you group feeds by topic, like building your own subreddits or newsletters.
 
@@ -63,7 +63,7 @@ Say you wanted to monitor several space-related websites for news of alien life,
 
 > **Tip**: Export your feeds and back them up to OPML format. Tuvix will include your feed filters and categories in the OPML file so you can easily re-import them into your own self-hosted instance.
 
-> **Tip**: RSS feeds do not provide instant notifications like push notifications or newsletters. RSS feeds are updated about ever 15 minutes or so, so beware that you may not want to rely on RSS for time-critical applications.
+> **Tip**: RSS feeds do not provide instant notifications like push notifications or newsletters. RSS feeds are updated about every 15 minutes or so, so beware that you may not want to rely on RSS for time-critical applications.
 
 > **Tip**: You can always open the link to the feed item to see the original post and any replies, or attached media.
 
